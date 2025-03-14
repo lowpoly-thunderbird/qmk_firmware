@@ -26,8 +26,8 @@ jobs:
     - name: Prepare keymap
       run: |
         mkdir -p keyboards/crkbd/keymaps/default
-        cp keymap.c keyboards/crkbd/keymaps/glp_qwerty_luna/
-        echo "RGBLIGHT_ENABLE = yes" > keyboards/crkbd/keymaps/glp_qwerty_luna/rules.mk
+        cp keymap.c keyboards/crkbd/keymaps/default/
+        echo "RGBLIGHT_ENABLE = yes" > keyboards/crkbd/keymaps/default/rules.mk
 
     - name: Build firmware
       run: |
