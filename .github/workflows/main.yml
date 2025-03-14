@@ -22,16 +22,16 @@ jobs:
         sudo apt-get install -y gcc unzip wget zip python3-pip
         python3 -m pip install qmk
         qmk setup -y
-
+        
     - name: Prepare keymap
       run: |
         mkdir -p keyboards/crkbd/keymaps/default
-        cp keymap.c keyboards/crkbd/keymaps/default/
+        cp keymap.c keyboards/crkbd/keymaps/default
         echo "RGBLIGHT_ENABLE = yes" > keyboards/crkbd/keymaps/default/rules.mk
 
     - name: Build firmware
       run: |
-        qmk compile -kb crkbd -km glp_qwerty_luna -t nice_nano_v2
+        qmk compile -kb crkbd -km default
 
     - name: Upload UF2 file
       uses: actions/upload-artifact@v4
